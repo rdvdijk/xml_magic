@@ -2,7 +2,7 @@ module CommonThread
   module XML
     # Credit to Jim Weirich at http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
     class BlankSlate
-      instance_methods.each { |m| undef_method m unless m =~ /^__/ }
+      instance_methods.each { |m| undef_method m unless m =~ /^__/ or m == :object_id }
     end    
     
     # Class that makes accessing xml objects more like any other ruby object
